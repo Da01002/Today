@@ -11,18 +11,18 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     var todayDataManager = TodayDataManger()
     var todayData: [Today] = [
-        Today(weather: 0, feelings: 1, color: 0,
+        Today(weather: "sunny", feelings: "happy", color: 0,
               text: "첫번째 셀 테스트입니다.\n첫번째 셀 테스트입니다.",
               date: Date()),
-        Today(weather: 1, feelings: 2, color: 1, text: "두번째 셀 테스트입니다.\n두번째 셀 테스트입니다.", date: Date()),
-        Today(weather: 0, feelings: 1, color: 2, photo: "sky",
+        Today(weather: "sunny", feelings: "happy", color: 1, text: "두번째 셀 테스트입니다.\n두번째 셀 테스트입니다.", date: Date()),
+        Today(weather: "sunny", feelings: "happy", color: 2, photo: "sky",
               text: "오늘 하늘이 너무 예뻤다.\n날씨가 계속 이렇게 좋았으면 좋겠다.",
               date: Date()),
-        Today(weather: 3, feelings: 4, color: 3, text: "세번째 셀 테스트입니다.\n세번째 셀 테스트입니다.", date: Date()),
-        Today(weather: 4, feelings: 5, color: 4, photo: "sunset",text: "바다애 가서 노을 보고 싶다.", date: Date()),
-        Today(weather: 5, feelings: 0, color: 5, text: "네번째 셀 테스트입니다.\n네번째 셀 테스트입니다.", date: Date()),
-        Today(weather: 3, feelings: 2, color: 6, photo: "forest",text: "더 더워지기 전에,\n등산 가야겠다.", date: Date()),
-        Today(weather: 4, feelings: 4, color: 1, photo: "sky",text: "다섯번째 셀 테스트입니다.\n다섯번째 셀 테스트입니다.", date: Date())
+        Today(weather: "sunny", feelings: "happy", color: 3, text: "세번째 셀 테스트입니다.\n세번째 셀 테스트입니다.", date: Date()),
+        Today(weather: "sunny", feelings: "happy", color: 4, photo: "sunset",text: "바다애 가서 노을 보고 싶다.", date: Date()),
+        Today(weather: "sunny", feelings: "happy", color: 5, text: "네번째 셀 테스트입니다.\n네번째 셀 테스트입니다.", date: Date()),
+        Today(weather: "sunny", feelings: "happy", color: 6, photo: "forest",text: "더 더워지기 전에,\n등산 가야겠다.", date: Date()),
+        Today(weather: "sunny", feelings: "happy", color: 1, photo: "sky",text: "다섯번째 셀 테스트입니다.\n다섯번째 셀 테스트입니다.", date: Date())
     ]
     @IBOutlet weak var tableView: UITableView!
     
@@ -83,38 +83,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     
-    func getWeatherImage(_ weatherInt: Int) -> UIImage {
-        switch weatherInt {
-        case 0:
-            return UIImage(named: "sunny")!
-        case 1:
-            return UIImage(named: "cloudy")!
-        case 2:
-            return UIImage(named: "rainy")!
-        case 3:
-            return UIImage(named: "windy")!
-        case 4:
-            return UIImage(named: "snow")!
-        default:
-            return UIImage(named: "sunny")!
-        }
+    func getWeatherImage(_ weather: String) -> UIImage {
+        return UIImage(named: weather)!
     }
     
-    func getFeelingsImage(_ feelingsInt: Int) -> UIImage {
-        switch feelingsInt {
-        case 0:
-            return UIImage(named: "soHappy")!
-        case 1:
-            return UIImage(named: "happy")!
-        case 2:
-            return UIImage(named: "tired")!
-        case 3:
-            return UIImage(named: "sad")!
-        case 4:
-            return UIImage(named: "soSad")!
-        default:
-            return UIImage(named: "angry")!
-        }
+    func getFeelingsImage(_ feelings: String) -> UIImage {
+        return UIImage(named: feelings)!
     }
 }
 

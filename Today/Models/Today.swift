@@ -8,8 +8,8 @@
 import UIKit
 
 struct Today {
-    var weather: Int?
-    var feelings: Int?
+    var weather: String?
+    var feelings: String?
     var color: Int?
     var photo: String?
     var text: String?
