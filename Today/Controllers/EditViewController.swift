@@ -7,9 +7,6 @@
 
 import UIKit
 
-// TODO: - 버튼 아래 여백 수정
-// TODO: - width로 인한 가로 스크롤 문제 해결
-
 class EditViewController: UIViewController {
     
     var today: Today = Today()
